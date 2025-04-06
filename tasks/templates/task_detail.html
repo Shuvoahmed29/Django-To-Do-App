@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>{{task.title}}</h1>
+    <p>{{task.description}}</p>
+    <p>Date: {{task.due_date}}</p>
+    <p>Time: {{task.due_time}}</p>
+    <p>Created at: {{task.created_at}}</p>
+    <p>Updated at: {{task.updated_at}}</p>
+</div>
+
+
+
+
+{% endblock %}

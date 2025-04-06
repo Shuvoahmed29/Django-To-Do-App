@@ -1,0 +1,31 @@
+- Create Vartual Environment
+python -m pipenv shell
+
+- Install pip Environment
+pip install pipenv
+
+- Install Django
+pipenv install django
+
+- Start Project
+django-admin startproject project_name .
+
+- Start app
+python manage.py startapp app_name
+
+- project_name er setting a giye new app ta registration korte hobe(INSTALLED_APPS) er moddhe
+- Create urls.py file in that apps
+- Connect app urls.py with project urls.py
+
+-Find the changes from models(database)
+python manage.py makemigrations
+
+- Update that changes in database
+python manage.py migrate
+
+- For Creating Super Users
+python manage.py createsuperuser
+
+- Run the Project
+python manage.py runserver
+
