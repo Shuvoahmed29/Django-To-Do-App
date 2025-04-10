@@ -9,6 +9,9 @@ from django.db import models
 # Pic Data from Database
 from .models import Task
 
+#User Name = admin
+#Password = admin12@#34
+
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -84,3 +87,18 @@ def task_delete(request,task_id):
     task = Task.objects.get(pk=task_id, created_by=request.user)
     task.delete()
     return redirect('/')
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
+def task_update(request,task_id):
+    task = Task.objects.get(pk=task_id,created_by=request.user)
+    if request.method == "POST":
+        form = TodoForm(request.POST,instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/',task_id=task_id)
+    else:
+        form = TodoForm(instance=task)
+    return render(request,'create_todo.html',{"form":form})

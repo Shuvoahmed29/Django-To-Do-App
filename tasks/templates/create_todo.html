@@ -6,7 +6,15 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">
+            
+            {% if form.instance.pk %}
+                Update
+            {% else %}
+                Create
+            {% endif %}
+                
+        </button>
     </form>
 </div>
 

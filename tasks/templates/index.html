@@ -2,7 +2,6 @@
 
 {% block content %}
 <div class="container">
-    <h1>Home</h1>
 
     <div>
         Filter:
@@ -21,7 +20,7 @@
 
     <ul>
         {% for task in tasks %}
-            <li>{{ task.title }}</li>
+            <li>{{ task.title }} <button><a href="{% url 'update' task.id %}">Update</a></button></li>
         {% endfor %}
     </ul>
 </div>
